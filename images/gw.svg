@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="36px" viewBox="0 0 68 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Monogram</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-686.000000, -360.000000)" fill="#D9D9D9">
+            <g id="Group" transform="translate(514.000000, 354.000000)">
+                <g id="Monogram" transform="translate(172.000000, 6.000000)">
+                    <polygon id="W3" points="58.1777778 1.0658141e-14 63.4666667 18.75 68 1.0658141e-14"></polygon>
+                    <polygon id="W2" points="42.3111111 1.0658141e-14 51.3777778 36 59.6888889 36 50.6222222 1.0658141e-14"></polygon>
+                    <polygon id="W1" points="27.2 1.0658141e-14 36.2666667 36 44.5777778 36 35.5111111 1.0658141e-14"></polygon>
+                    <path d="M12.8444444,15 L12.8444444,21.75 L19.6444444,21.75 L19.6444444,27 C19.6864242,28.3648304 19.0598699,28.9838402 18.1333333,29.25 L9.06666667,29.25 C8.14593153,28.9838402 7.52010238,28.3648304 7.55555556,27 L7.55555556,9 C7.52010238,7.63445311 8.14593153,7.0154434 9.06666667,6.75 L21.1555556,6.75 L19.6444444,1.0658141e-14 L7.55555556,1.0658141e-14 C3.02834595,1.0658141e-14 0,2.99116383 0,7.5 L0,28.5 C0,33.0081197 3.02834595,36 7.55555556,36 L19.6444444,36 C24.1397462,36 27.1492375,33.0568381 27.2,28.5 L23.4222222,15 L12.8444444,15 Z" id="G"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
