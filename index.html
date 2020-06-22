@@ -1,150 +1,329 @@
-<!DOCTYPE html>
+<head>
 
-<html>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gabe Will, Product Designer</title>
+	<meta name="description" content="Gabe Will is a product designer at Square in San Francisco, California.">
 	
-	<head>
+	<!-- The next four tags are for generating a rich preview -->
+	<meta property="og:title" content="Gabe Will, Product Designer">
+	<meta property="og:description" content="Gabe Will is a product designer at Square in San Francisco, California.">
+	<meta property="og:url" content="www.https://gabewill.com/">
+	<meta property="og:image" content="images/gabe@2x.jpg">
 
-		<meta charset="utf-8" /> 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta description="My name is Gabe Will. I’m a designer working at Square in San Francisco.">
-		<title>Gabe Will, Product Designer</title>
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-		<style type="text/css">
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="alternate icon" href="favicon.ico">
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=fallback');
+	</style>
 
-			* {
-				margin: 0;
-				padding: 0;
+	<style type="text/css">
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		:root {
+			--action-color: rgb(84,78,69);
+			--background-color: rgb(255,252,247);
+			--border-color: rgba(0,0,0,0.1);
+			--button-default: rgb(232,193,118);
+			--button-hover: rgb(219,179,101);
+			--bounding-box: transparent;
+			--link-color: rgb(181,138,56);
+			--text-primary: rgb(84,78,69);
+			--text-secondary: rgba(84, 78, 69, 0.8);
+		}
+
+		::selection {
+			background-color: rgba(232,193,118,0.4);
+		}
+
+		body {
+			color: var(--text-primary);
+			background: var(--background-color);
+			font-family: 'Inter', sans-serif;
+			margin: 1.5rem;
+		}
+
+		footer {
+			margin-top: 3rem;
+			padding-top: 1rem;
+			border-top: 2px solid var(--border-color);
+		}
+
+		footer p {
+			color: var(--text-secondary);
+			font-size: 0.875rem;
+			display: inline-block;
+		}
+
+		h1 {
+			background: var(--bounding-box);
+			font: 1.5rem/125% Inter;
+			margin: 3rem 0 1.5rem 0;
+		}
+
+		p {
+			background: var(--bounding-box);
+			font: 1rem/150% Inter;
+			margin-bottom: 1rem;
+		}
+
+		.body-links {
+			color: var(--link-color);
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.body-links:hover {
+			text-decoration: underline;
+		}
+
+		.body-links:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+
+		.caption {
+			background-color: var(--background-color);
+			border-radius: 0 0 8px 8px;
+			box-shadow: inset 0px 0px 0px 2px var(--border-color);
+			width: 100%;
+		}
+
+		.cover {
+			background: url(images/gabe@2x.jpg);
+			background-size: cover;
+			background-position: center;
+			border-radius: 8px;
+			box-shadow: inset 0px 0px 0px 2px var(--border-color);
+			margin-bottom: 1.5rem;
+			height: 320px;
+			width: 100%;
+		}
+
+
+		.button {
+			background: var(--button-default);
+			color: var(--action-color);
+			border-radius: 4px;
+			display: block;
+			font: 600 1rem/150% Inter;
+			padding: 1rem;
+			text-align: center;
+			text-decoration: none;
+			transition: all 150ms linear;
+			width: 100%;
+		}
+
+		.button:hover {
+			background: var(--button-hover);
+			transition: all 150ms linear;
+		}
+
+		.button:active {
+			transform: scale(0.99);
+			transition: all 150ms ease;
+		}
+
+		.button:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+
+		.footer-links {
+			float: right;
+		}
+
+		.footer-links a {
+			text-decoration: none;
+			color: var(--text-secondary);
+			font-weight: 600;
+		}
+
+		.footer-links a:hover {
+			text-decoration: underline;
+		}
+
+		.footer-links a:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+
+		.intro {
+			background: var(--bounding-box);
+			font: 2rem/125% Inter;
+			margin-bottom: 1rem;
+		}
+
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-gap: 32px;
+		}
+
+		.project-preview {
+			box-shadow: inset 0px 0px 0px 2px var(--border-color);
+			height: 280px; /* 4:3 aspect ratio */
+			width: 100%;
+			border-radius: 8px;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column
+		}
+
+		.preview-billing {
+			background: url(images/preview-billing@2x.png);
+			background-size: cover;
+		}
+
+		.preview-tags {
+			background: url(images/preview-tags@2x.png);
+			background-size: cover;
+		}
+
+		.preview-team {
+			background: url(images/preview-team@2x.png);
+			background-size: cover;
+		}
+
+		.preview-wink {
+			background: url(images/preview-wink@2x.png);
+			background-size: cover;
+		}
+
+		.project-client {
+			float: right;
+			font-size: 0.875em;
+			margin: 16px 16px 16px 8px;
+		}
+
+		.project-name {
+			float: left;
+			font-size: 0.875rem;
+			margin: 16px 8px 16px 16px;
+		}
+
+		.work {
+			margin-bottom: 1.5rem;
+		}
+
+		.wrapper {
+			max-width: 640px;
+			margin: auto;
+		}
+
+		@media screen and (max-width: 640px) {
+			.cover {
+			    height: 296px;
 			}
+		}
 
-			html {
-				background: #3B3E40;
-				height: 100%;
-			}
+		@media screen and (max-width: 400px) {
+		    .cover {
+		        height: 164px;
+		    }
+		}
 
-			body{
-				font: 1em/2 'Inconsolata', monospace;
-				height: 100%;
-				color: #D9D9D9;
-				text-align: center;
-			}
-
-			a {
-				color: #D9D9D9;
-				border-bottom: 2px solid rgba(217,217,217,0.3);
-				padding-bottom: 2px;
-				text-decoration: none;
-				transition: all .3s;
-			}
-
-			a:visited {
-				color: #D9D9D9;
-			}
-
-			a:hover {
-				color: #F2F2F2;
-				border-bottom: 2px solid rgba(255,242,0,1);
-				padding-bottom: 2px;
-				transition: all .3s;
-			}
-
-			.container {
-				align-items: center;
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-				justify-content: center;
-			}
-
-			.gw{
-				animation: fadeInBottom .5s ease-out forwards;
-				margin-bottom: 2.25em;
-				opacity: 0;
-			}
-
-			.g, .w1, .w2, .w3{
-				transition: all .5s ease;
-			}
-
-			.gw:hover .g {
-				transform: translate(-3px);
-				transition: all .5s ease;
-			}
-
-			.gw:hover .w1 {
-				transform: translate(1px);
-				transition: all .5s ease;
-			}
-
-			.gw:hover .w2 {
-				transform: translate(4px);
-				transition: all .5s ease;
-			}
-
-			.gw:hover .w3 {
-				transform: translate(7px);
-				transition: all .5s ease;
-			}
-
-			@keyframes fadeInBottom {
-				0% {
-					transform: translateY(8px);
-					opacity: 0;
-				}
-				100% {
-					transform: translateY(0px);
-					opacity: 1;
-				}
-			}
-
-			.line-1 {
-				animation: fadeInBottom .5s 0.3s ease-out forwards;
-				opacity: 0;
-			}
-
-			.line-2 {
-				animation: fadeInBottom .5s 0.4s ease-out forwards;
-				opacity: 0;
-			}
-
-			.line-3 {
-				animation: fadeInBottom .5s 0.5s ease-out forwards;
-				opacity: 0;
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--action-color: rgb(36,65,81);
+				--background-color: rgb(36,65,81);
+				--border-color: rgba(255,255,255,0.1);
+				--link-color: rgb(232,193,118);
+				--selection-color: rgba(255,255,255,0.25);
+				--text-primary: rgba(255,255,255,0.7);
+				--text-secondary: rgba(255,255,255,0.55);
 			}
 
 			::selection {
-				background: #F2F2F2;
-				color: #2F3133;
+				background-color: var(--selection-color);
 			}
 
-		</style>
+			p {
+				font-weight: 300;
+			}
 
-	</head>
+		}
 
-	<body>
+	</style>
 
-		<div class="container">
+</head>
+<body>
 
-			<svg title="GW Monogram" class="gw" width="100px" height="36px" viewBox="0 0 68 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<div class="wrapper">
 
-				<path d="M12.8444444,15 L12.8444444,21.75 L19.6444444,21.75 L19.6444444,27 C19.6864242,28.3648304 19.0598699,28.9838402 18.1333333,29.25 L9.06666667,29.25 C8.14593153,28.9838402 7.52010238,28.3648304 7.55555556,27 L7.55555556,9 C7.52010238,7.63445311 8.14593153,7.0154434 9.06666667,6.75 L21.1555556,6.75 L19.6444444,1.0658141e-14 L7.55555556,1.0658141e-14 C3.02834595,1.0658141e-14 0,2.99116383 0,7.5 L0,28.5 C0,33.0081197 3.02834595,36 7.55555556,36 L19.6444444,36 C24.1397462,36 27.1492375,33.0568381 27.2,28.5 L23.4222222,15 L12.8444444,15 Z" fill="#D9D9D9" class="g"></path>
+		<div class="cover" title="April 13, Kyoto. 67°F and the cherry blossoms were in full bloom."></div>
+		
+		<p class="intro">Hey, I’m Gabe. I’m a designer at Square in San Francisco. Nice to meet you.</p>
 
-				<polygon points="27.2 1.0658141e-14 36.2666667 36 44.5777778 36 35.5111111 1.0658141e-14" fill="#D9D9D9" class="w1"></polygon>
+		<p>I’m a recent transplant to the West Coast by way of Atlanta. I was previously working as a product designer at <a class="body-links" href="https://mailchimp.com/" target="_blank" rel="noopener">Mailchimp</a>, where I helped create a new design system, built tools for users to segment their customers, and designed high-performing checkout flows. Some day I may even add case studies so you can read all about it.</p>
 
-				<polygon points="42.3111111 1.0658141e-14 51.3777778 36 59.6888889 36 50.6222222 1.0658141e-14" fill="#D9D9D9" class="w2"></polygon>
+		<p>I get particularly excited about helping others who are trying to find a way into design. If that's you and I can help you in any way, <a class="body-links" href="mailto:agabewill@gmail.com">send me an email</a>.</p>
 
-				<polygon points="58.1777778 1.0658141e-14 63.4666667 18.75 68 1.0658141e-14" fill="#D9D9D9" class="w3"></polygon>
+		<p style="margin-bottom: 1.5rem;">If you just want the facts, you can check out my resume below.</p>
 
-			</svg>
+		<a href="https://www.dropbox.com/s/fgavcnfq3b9x6ee/gabe-will-resume-2019.pdf" class="button">View resume</a>
 
-			<p class="line-1">Hey there. My name is Gabe Will.</p>
+		<section class="work">
 
-			<p class="line-2">I’m a designer working at Square in San Francisco.</p>
+			<h1>Work</h1>
 
-			<p class="line-3"><a href="https://twitter.com/agabewill" target="_blank">Twitter</a>, <a href="https://dribbble.com/agabewill" target="_blank">Dribbble</a>, <a href="https://www.linkedin.com/in/gabewill/" target="_blank">LinkedIn</a>, <a href="mailto:agabewill@gmail.com" target="_blank">Email</a></p>
+			<div class="project-grid">
 
-		</div>
+				<div class="project-preview preview-team">
+					<div class="caption">
+						<p class="project-name">Team management</p>
+						<p class="project-client">Square, 2020</p>
+					</div>
+				</div>
 
-	</body>
+				<div class="project-preview preview-tags">
+					<div class="caption">
+						<p class="project-name">Audience tags</p>
+						<p class="project-client">Mailchimp, 2019</p>
+					</div>
+				</div>
 
-</html>
+				<div class="project-preview preview-wink">
+					<div class="caption">
+						<p class="project-name">Wink design system</p>
+						<p class="project-client">Mailchimp, 2018</p>
+					</div>
+				</div>
+
+				<div class="project-preview preview-billing">
+					<div class="caption">
+						<p class="project-name">Billing experience</p>
+						<p class="project-client">Mailchimp, 2018</p>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+		<footer>
+
+			<p>
+
+				(c)	<script type="text/javascript">document.write(new Date().getFullYear());</script>. Don’t steal my stuff.
+
+			</p>
+
+			<p class="footer-links">
+				<a href="https://www.linkedin.com/in/gabewill/" target="_blank" rel="noopener">LinkedIn</a>, <a href="https://twitter.com/agabewill" target="_blank" rel="noopener">Twitter</a>, <a href="https://dribbble.com/agabewill" target="_blank" rel="noopener">Dribbble</a>
+			</p>
+
+
+		</footer>
+
+	</div>
+
+
+
+</body>
