@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --action-color: rgb(84,78,69);
+    --background-color: rgb(255,252,247);
+    --border-color: rgba(0,0,0,0.1);
+    --button-default: rgb(232,193,118);
+    --button-hover: rgb(219,179,101);
+    --bounding-box: transparent;
+    --link-color: rgb(181,138,56);
+    --text-primary: rgb(84,78,69);
+    --text-secondary: rgba(84, 78, 69, 0.8);
+}
+
+::selection {
+    background-color: rgba(232,193,118,0.4);
+}
+
+body {
+    color: var(--text-primary);
+    background: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    margin: 1.5rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+}
+
+footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+h1 {
+    background: var(--bounding-box);
+    font: 1.5rem/125% Inter, sans-serif;
+    margin: 3rem 0 1.5rem 0;
+}
+
+p {
+    background: var(--bounding-box);
+    font: 1rem/150% Inter, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.body-links {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.body-links:hover {
+    text-decoration: underline;
+}
+
+.body-links:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+.button {
+    background: var(--button-default);
+    color: var(--action-color);
+    border-radius: 4px;
+    display: block;
+    font: 600 1rem/150% Inter, sans-serif;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 150ms linear;
+    width: 100%;
+}
+
+.button:hover {
+    background: var(--button-hover);
+    transition: all 150ms linear;
+}
+
+.button:active {
+    transform: scale(0.99);
+    transition: all 150ms ease;
+}
+
+.button:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+.caption {
+    background-color: var(--background-color);
+    border-radius: 0 0 8px 8px;
+    box-shadow: inset 0px 0px 0px 2px var(--border-color);
+    width: 100%;
+}
+
+.cover {
+    background: url(../gabe@2x.jpg), rgba(0,0,0,0.15);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 0px 2px var(--border-color);
+    margin-bottom: 1.5rem;
+    height: 320px;
+    width: 100%;
+}
+
+.footer-legal {
+    float: left;
+}
+
+.footer-links {
+    float: right;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links a:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+.intro {
+    background: var(--bounding-box);
+    font: 2rem/125% Inter, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.wrapper {
+    max-width: 640px;
+    margin: auto;
+}
+
+@media screen and (max-width: 640px) {
+    .cover {
+        height: 296px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cover {
+        height: 200px;
+    }
+
+    .footer-legal {
+        display: block;
+        float: none;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+        display: block;
+        float: none;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --action-color: rgb(36,65,81);
+        --background-color: rgb(36,65,81);
+        --border-color: rgba(255,255,255,0.1);
+        --link-color: rgb(232,193,118);
+        --selection-color: rgba(255,255,255,0.25);
+        --text-primary: rgba(255,255,255,0.7);
+        --text-secondary: rgba(255,255,255,0.55);
+    }
+
+    ::selection {
+        background-color: var(--selection-color);
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+}
