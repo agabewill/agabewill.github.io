@@ -25,7 +25,6 @@ body {
     color: var(--text-primary);
     background: var(--background-color);
     font-family: 'IBM Plex Sans', sans-serif;
-    margin: 1.5rem;
 }
 
 footer {
@@ -44,6 +43,10 @@ p {
     background: var(--bounding-box);
     font: 1rem/150% IBM Plex Sans, sans-serif;
     margin-bottom: 1rem;
+}
+
+p:last-of-type {
+    margin-bottom: 1.5rem;
 }
 
 .body-links {
@@ -102,6 +105,7 @@ p {
     justify-content: center;
     margin-bottom: 1.5rem;
     padding: 2rem;
+    position: relative;
 }
 
 .footer-legal {
@@ -145,23 +149,22 @@ p {
 
 @keyframes rotate-spheres {
     from {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
 .spheres {
     animation: rotate-spheres 10s linear infinite;
-    background: url('../spheres.svg') no-repeat center center;
-    height: 418px;
+    background: url('../spheres.svg') no-repeat center center / cover;
     width: 100%;
-    margin: auto;
+    padding-bottom: 100%;
     position: absolute;
-    top: -88px;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, -50%);*/
     z-index: -1;
 }
 
@@ -169,30 +172,8 @@ p {
     max-width: 512px;
     margin: auto;
     position: relative;
-}
-
-@media screen and (max-width: 512) {
-    .cover {
-        height: 296px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .cover {
-        height: 200px;
-    }
-
-    .footer-legal {
-        display: block;
-        float: none;
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-links {
-        display: block;
-        float: none;
-        margin-bottom: 2rem;
-    }
+    overflow-x: hidden;
+    padding: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
