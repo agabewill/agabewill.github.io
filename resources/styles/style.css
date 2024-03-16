@@ -30,7 +30,7 @@ body {
 footer {
     margin-top: 3rem;
     padding-top: 1rem;
-    border-top: 2px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 footer p {
@@ -39,13 +39,14 @@ footer p {
     display: inline-block;
 }
 
-p {
+.body-text {
     background: var(--bounding-box);
     font: 1rem/150% IBM Plex Sans, sans-serif;
     margin-bottom: 1rem;
 }
 
-p:last-of-type {
+.body-text-end {
+    font: 1rem/150% IBM Plex Sans, sans-serif;
     margin-bottom: 1.5rem;
 }
 
@@ -94,10 +95,13 @@ p:last-of-type {
 }
 
 .caption {
-    background-color: var(--background-color);
+    background-color: rgb(255 255 255);
     border-radius: 0 0 8px 8px;
-    box-shadow: inset 0px 0px 0px 2px var(--border-color);
+    box-shadow: inset 0px 0px 0px 1px var(--border-color);
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
     width: 100%;
+    z-index: 1;
 }
 
 .cover {
@@ -137,7 +141,7 @@ p:last-of-type {
 .intro {
     background: var(--bounding-box);
     font: 1.75rem/125% IBM Plex Serif, serif;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .portrait {
@@ -145,6 +149,74 @@ p:last-of-type {
     box-shadow: 0 0 24px 0 rgb(94 115 189 / 0.25);
     margin: auto;
     width: 180px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    grid-gap: 24px;
+}
+
+.project-preview {
+    align-items: center;
+    box-shadow: inset 0px 0px 0px 1px var(--border-color);
+    height: 264px; /* 3:2 aspect ratio including the .caption element */
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column
+}
+
+.preview-nho {
+    background-color: rgb(128 155 255);
+}
+
+.preview-badges {
+    background-color: rgb(227 128 255);
+}
+
+.preview-onboarding {
+    background-color: rgb(255 128 155);
+}
+
+.preview-scheduling {
+    background-color: rgb(255 227 128);
+}
+
+.preview-audience {
+    background-color: rgb(155 255 201);
+}
+
+.preview-wink {
+    background-color: rgb(128 240 255);
+}
+
+.project-company {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.project-name {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.project-image {
+    border-radius: 4px 4px 0 0;
+    filter: grayscale(100%);
+    height: 174px;
+    width: 200px;
+    margin-bottom:-1rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+a.project-link:hover .project-image {
+    transform: translateY(-1rem);
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 @keyframes rotate-spheres {
@@ -169,7 +241,7 @@ p:last-of-type {
 }
 
 .wrapper {
-    max-width: 512px;
+    max-width: 648px;
     margin: auto;
     position: relative;
     overflow-x: hidden;
