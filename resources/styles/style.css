@@ -11,20 +11,76 @@
     --button-default: rgb(94 115 189);
     --button-hover: rgb(82 100 163);
     --bounding-box: transparent;
-    --link-color: rgb(0 0 0 / 0.7);
-    --text-primary: rgb(0 0 0 / 0.7);
+    --link-color: rgb(0 0 0 / 0.8);
+    --text-primary: rgb(0 0 0 / 0.8);
     --text-secondary: rgb(0 0 0 / 0.55);
+    --text-inverted: rgb(255 255 255);
     --highlight: rgb(255 244 128 / 0.3);
 }
 
-::selection {
-    background-color: var(--highlight);
+html {
+    font-size: 16px;
 }
 
 body {
-    color: var(--text-primary);
     background: var(--background-color);
-    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--text-primary);
+    font: 1rem 'IBM Plex Sans', sans-serif;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+  
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.nav-links li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-active {
+    border-bottom: 2px solid var(--text-primary);
+}
+
+.nav-links li.nav-active a {
+    color: var(--text-primary);
+}
+
+.nav-active a {
+    color: var(--text-primary);
+}
+
+.masthead {
+    align-items: center;
+    color: var(--text-primary);
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.masthead svg {
+    fill: var(--text-primary);
+    width: 16px;
+    height: 16px;
 }
 
 footer {
@@ -39,15 +95,18 @@ footer p {
     display: inline-block;
 }
 
-.body-text {
-    background: var(--bounding-box);
-    font: 1rem/150% IBM Plex Sans, sans-serif;
-    margin-bottom: 1rem;
+h1 {
+    font-size: 3rem;
 }
 
-.body-text-end {
-    font: 1rem/150% IBM Plex Sans, sans-serif;
-    margin-bottom: 1.5rem;
+h2 {
+    font-size: 2rem;
+}
+
+.body-text {
+    background: var(--bounding-box);
+    font: 1rem/150% 'IBM Plex Sans', sans-serif;
+    margin-bottom: 1rem;
 }
 
 .body-links {
@@ -71,7 +130,7 @@ footer p {
     color: var(--action-color);
     border-radius: 4px;
     display: block;
-    font: 600 1rem/150% IBM Plex Sans, sans-serif;
+    font: 600 1rem/150% 'IBM Plex Sans', sans-serif;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
@@ -94,150 +153,134 @@ footer p {
     text-decoration: none;
 }
 
-.caption {
-    background-color: rgb(255 255 255);
-    border-radius: 0 0 8px 8px;
-    box-shadow: inset 0px 0px 0px 1px var(--border-color);
-    font-size: 0.875rem;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    z-index: 1;
-}
-
-.cover {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    padding: 2rem;
-    position: relative;
-}
-
 .footer-legal {
     float: left;
 }
 
-.footer-links {
+.footer-link {
     float: right;
 }
 
-.footer-links a {
+.footer-link a {
     border-bottom: 1px dashed var(--link-color);
     color: var(--text-secondary);
     text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer-link a:hover {
     border-bottom: 1px solid var(--link-color);
     text-decoration: underline;
     text-decoration: none;
 }
 
-.footer-links a:focus {
+.footer-link a:focus {
     border-bottom: 2px solid var(--link-color);
     outline: none;
     text-decoration: none;
 }
 
 .intro {
+    align-items: center;
     background: var(--bounding-box);
-    font: 1.75rem/125% IBM Plex Serif, serif;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    font: 1.5rem/150% 'IBM Plex Sans', sans-serif;
+    gap: 1rem;
     margin-bottom: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .portrait {
-    border-radius: 90px;
-    box-shadow: 0 0 24px 0 rgb(94 115 189 / 0.25);
-    margin: auto;
-    width: 180px;
+    border-radius: 8px;
+    width: 64px;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-    grid-gap: 24px;
+.project-link {
+    text-decoration: none;
 }
 
 .project-preview {
+    aspect-ratio: 3 / 2;
     align-items: center;
-    box-shadow: inset 0px 0px 0px 1px var(--border-color);
-    height: 264px; /* 3:2 aspect ratio including the .caption element */
-    width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
+    color: var(--text-inverted);
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 100%;
+    transition: transform 0.3s ease;
 }
 
-.preview-nho {
-    background-color: rgb(128 155 255);
+.project-preview:hover {
+    transform: scale(1.02);
 }
 
-.preview-badges {
-    background-color: rgb(227 128 255);
-}
-
-.preview-onboarding {
-    background-color: rgb(255 128 155);
-}
-
-.preview-scheduling {
-    background-color: rgb(255 227 128);
-}
-
-.preview-audience {
-    background-color: rgb(155 255 201);
-}
-
-.preview-wink {
-    background-color: rgb(128 240 255);
-}
-
-.project-company {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    margin: 0;
-}
-
-.project-name {
-    font-size: 1rem;
-    margin: 0;
-}
-
-.project-image {
-    border-radius: 4px 4px 0 0;
-    filter: grayscale(100%);
-    height: 174px;
-    width: 200px;
-    margin-bottom:-1rem;
-    opacity: 0.5;
+.project-preview .project-image {
+    border-radius: 12px;
+    filter: grayscale(0%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
     transition: all 0.3s ease;
 }
 
-a.project-link:hover .project-image {
-    transform: translateY(-1rem);
-    filter: grayscale(0%);
+.project-preview:hover .project-image {
+    filter: grayscale(100%);
+    opacity: 0.15;
+  }
+  
+.project-preview > *:not(.project-image) {
+    position: relative;
+    z-index: 1;
+}
+
+.project-preview h2 {
+    opacity: 0;
+    padding: 1rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.project-preview:hover h2 {
     opacity: 1;
 }
 
-@keyframes rotate-spheres {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+.project-nho {
+    background-color: rgb(128 155 255);
 }
 
-.spheres {
-    animation: rotate-spheres 10s linear infinite;
-    background: url('../spheres.svg') no-repeat center center / cover;
-    width: 100%;
-    padding-bottom: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /*transform: translate(-50%, -50%);*/
-    z-index: -1;
+.project-badges {
+    background-color: rgb(227 128 255);
+}
+
+.project-onboarding {
+    background-color: rgb(255 128 155);
+}
+
+.project-scheduling {
+    background-color: rgb(255 227 128);
+}
+
+.project-scheduling h2 {
+    color: var(--text-secondary);
+}
+
+.project-billing {
+    background-color: rgb(155 255 201);
+}
+
+.project-billing h2 {
+    color: var(--text-secondary);
+}
+
+.project-wink {
+    background-color: rgb(128 240 255);
 }
 
 .wrapper {
@@ -248,7 +291,42 @@ a.project-link:hover .project-image {
     padding: 1.5rem;
 }
 
+@media (max-width: 648px) {
+    
+    .portrait {
+        display: none;
+    }
+
+    .project-preview h2 {
+        opacity: 1;
+    }
+
+    .project-preview {
+        aspect-ratio: 3 / 2;
+        align-items: center;
+        border-radius: 12px;
+        color: var(--text-inverted);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        position: relative;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    
+    .project-preview:hover {
+        transform: scale(1);
+    }
+    
+    .project-preview .project-image {
+        filter: grayscale(100%);
+        opacity: 0.15;
+    }
+
+  }
+
 @media (prefers-color-scheme: dark) {
+    
     :root {
         --action-color: rgb(255 255 255);
         --background-color: rgb(41 41 41);
@@ -257,18 +335,24 @@ a.project-link:hover .project-image {
         --selection-color: rgb(255 255 255 / 0.1);
         --text-primary: rgb(255 255 255 / 0.8);
         --text-secondary: rgb(255 255 255 / 0.55);
-    }
-
-    ::selection {
-        background-color: var(--selection-color);
+        --text-inverted: rgb(255 255 255);
+        --highlight: rgb(255 244 128 / 0.3);
     }
 
     body {
         -webkit-font-smoothing: antialiased;
     }
 
-    .portrait {
-        box-shadow: 0 0 24px 0 rgb(255 255 255 / 0.25);
+    .project-preview {
+        opacity: 0.8;
+    }
+
+    .project-scheduling h2 {
+        color: rgb(0 0 0 / 0.55);
+    }
+    
+    .project-billing h2 {
+        color: rgb(0 0 0 / 0.55);
     }
 
 }
