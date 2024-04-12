@@ -324,6 +324,7 @@ h3 {
         --selection-color: rgb(255 255 255 / 0.1);
         --text-primary: rgb(255 255 255 / 0.8);
         --text-secondary: rgb(255 255 255 / 0.55);
+        --text-tertiary: rgb(255 255 255 / 0.4);
         --text-inverted: rgb(255 255 255);
     }
 
@@ -333,6 +334,10 @@ h3 {
 
     .cover-image {
         opacity: 0.8;
+    }
+
+    .nav-links li a:hover {
+        background-color: rgb(255 255 255 / 0.1);
     }
 
     .project-preview {
