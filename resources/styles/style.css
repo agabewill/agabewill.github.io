@@ -16,6 +16,10 @@
     --text-inverted: rgb(255 255 255);
 }
 
+a {
+    text-decoration: none;
+}
+
 html {
     font-size: 16px;
 }
@@ -160,6 +164,10 @@ hr {
     width: 100%;
 }
 
+.ratio-3-2 {
+    aspect-ratio: 3 / 2;
+}
+
 .footer-legal {
     float: left;
 }
@@ -180,6 +188,31 @@ hr {
     text-decoration: none;
 }
 
+.image-column-single {
+    margin-bottom: 1rem;
+}
+
+.image-column-single img {
+    aspect-ratio: 3 / 2;
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
+.image-column-double {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.image-column-double img {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
 .intro {
     align-items: center;
     border-top: 1px solid var(--border-color);
@@ -189,6 +222,46 @@ hr {
     gap: 1rem;
     margin-bottom: 1.5rem;
     padding: 1.5rem 0;
+}
+
+.lighten {
+    color: var(--text-secondary);
+}
+
+.next-up {
+    align-items: top;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    transition: all 0.15s linear;
+}
+
+.next-up img {
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    display: block;
+    opacity: 0.8;
+    transition: all 0.15s linear;
+}
+
+.next-up h3 {
+    font: 600 0.875rem/150% 'IBM Plex Sans', sans-serif;
+}
+
+.next-up p {
+    font: 0.875rem/150% 'IBM Plex Sans', sans-serif;
+}
+
+.next-up:hover {
+    color: var(--text-primary);
+}
+
+.next-up:hover img {
+    opacity: 1;
 }
 
 .portrait {
@@ -288,12 +361,21 @@ hr {
     gap: 2rem;
 }
 
-.resume-heading {
+.heading-resume {
     font: 600 1rem/150% 'IBM Plex Sans', sans-serif;
     margin-bottom: 1rem;
 }
 
-.resume-section {
+.heading-work-large {
+    font: 600 1.5rem/150% 'IBM Plex Sans', sans-serif;
+}
+
+.heading-work-small {
+    font: 600 1rem/150% 'IBM Plex Sans', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.content-block {
     margin-bottom: 2rem;
 }
 
@@ -347,6 +429,26 @@ hr {
 
   }
 
+@media (max-width: 400px) {
+
+    .next-up {
+        grid-template-columns: 1fr;
+    }
+
+    .next-up img {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 350px) {
+
+    nav a span {
+        display: none;
+    }
+
+}
+
 @media (prefers-color-scheme: dark) {
     
     :root {
@@ -365,6 +467,14 @@ hr {
     }
 
     .cover-image {
+        opacity: 0.8;
+    }
+
+    .image-column-single img {
+        opacity: 0.8;
+    }
+    
+    .image-column-double img {
         opacity: 0.8;
     }
 
