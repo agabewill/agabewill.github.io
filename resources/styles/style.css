@@ -14,6 +14,12 @@
     --text-secondary: rgb(0 0 0 / 0.55);
     --text-tertiary: rgb(0 0 0 / 0.4);
     --text-inverted: rgb(255 255 255);
+    --color-accent-1: rgb(128 155 255);
+    --color-accent-2: rgb(227 128 255);
+    --color-accent-3: rgb(255 128 155);
+    --color-accent-4: rgb(255 227 128);
+    --color-accent-5: rgb(164 250 219);
+    --color-accent-6: rgb(144 242 255);
 }
 
 a {
@@ -325,35 +331,31 @@ hr {
 }
 
 .project-nho {
-    background-color: rgb(128 155 255);
+    background-color: var(--color-accent-1);
 }
 
 .project-badges {
-    background-color: rgb(227 128 255);
+    background-color: var(--color-accent-2);
 }
 
-.project-onboarding {
-    background-color: rgb(255 128 155);
+.project-setup {
+    background-color: var(--color-accent-3);
 }
 
 .project-scheduling {
-    background-color: rgb(255 227 128);
-}
-
-.project-scheduling h2 {
-    color: var(--text-secondary);
+    background-color: var(--color-accent-4);
 }
 
 .project-billing {
-    background-color: rgb(155 255 201);
-}
-
-.project-billing h2 {
-    color: var(--text-secondary);
+    background-color: var(--color-accent-5);
 }
 
 .project-wink {
-    background-color: rgb(128 240 255);
+    background-color: var(--color-accent-6);
+}
+
+.project-scheduling h2, .project-billing h2 {
+    color: var(--text-secondary);
 }
 
 .resume {
