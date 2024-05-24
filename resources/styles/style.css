@@ -252,6 +252,7 @@ hr {
     display: block;
     opacity: 0.8;
     transition: all 0.15s linear;
+    width: 100%;
 }
 
 .next-up h3 {
