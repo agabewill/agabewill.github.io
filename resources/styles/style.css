@@ -123,6 +123,7 @@ hr {
 .body-text {
     font: 1rem/150% 'IBM Plex Sans', sans-serif;
     margin-bottom: 1rem;
+    text-wrap: pretty;
 }
 
 .body-link {
