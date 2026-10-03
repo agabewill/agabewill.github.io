@@ -64,7 +64,7 @@
 			align-items: center;
 			gap: 32px;
 			width: 100%;
-			max-width: 1200px;
+			max-width: 1024px;
 		}
 
 		.portrait {
@@ -80,14 +80,23 @@
 			gap: 24px;
 		}
 
+		/* The underline is always there but transparent, so it can fade and settle into place */
 		a {
 			color: inherit;
-			text-decoration: none;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+			text-underline-offset: 0.35em;
+			transition: text-decoration-color 200ms ease-out, text-underline-offset 200ms ease-out;
 		}
 
 		a:hover,
 		a:focus-visible {
-			text-decoration: underline;
+			text-decoration-color: currentColor;
+			text-underline-offset: 0.15em;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			a { transition: none; }
 		}
 
 		.employer { color: var(--accent); }
@@ -113,8 +122,6 @@
 
 			.intro { font-size: 32px; }
 
-			.location { display: block; }
-
 			.links { font-size: 20px; }
 		}
 	</style>
@@ -127,7 +134,7 @@
 		<div class="intro">
 			<p>
 				Hi, I’m Gabe. I’m a product designer focused on building experiences for businesses of all sizes. I’m currently at <a href="https://www.affirm.com/" class="employer">Affirm</a> <s>Engine</s> <s>Square</s> <s>Mailchimp</s>.
-				<span class="location">I’m based out of Berkeley, California.</span>
+				I’m based out of Berkeley, California.
 			</p>
 
 			<p class="links">
