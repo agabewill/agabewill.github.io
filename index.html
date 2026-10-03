@@ -31,6 +31,7 @@
 			--text: rgba(0, 0, 0, 0.7);
 			--text-muted: rgba(0, 0, 0, 0.55);
 			--accent: #4a4af4;
+			--avatar-border: rgba(0, 0, 0, 0.05);
 		}
 
 		@media (prefers-color-scheme: dark) {
@@ -39,6 +40,7 @@
 				--text: rgba(255, 255, 255, 0.9);
 				--text-muted: rgba(255, 255, 255, 0.55);
 				--accent: #a8a9fc;
+				--avatar-border: transparent;
 			}
 		}
 
@@ -73,7 +75,7 @@
 			height: 64px;
 			border-radius: 50%;
 			/* Inner border; a negative offset draws the outline over the photo's edge */
-			outline: 1px solid rgba(0, 0, 0, 0.05);
+			outline: 1px solid var(--avatar-border);
 			outline-offset: -1px;
 		}
 
